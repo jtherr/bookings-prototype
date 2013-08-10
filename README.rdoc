@@ -1,28 +1,33 @@
-== README
+== StayNTouch Bookings Prototype
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The requirements for this prototype are the following:
 
-Things you may want to cover:
+1. Allow a user to log in using email address and password
+2. Once logged in, display a list of bookings for that guest
+3. Each booking item will show the following
+   a. Hotel Name
+   b. Travel dates
+   c. Confirmation number
+4. Clicking on the Hotel Name will invoke the google maps and displays the location marker on the map.
 
-* Ruby version
+This prototype is built using Ruby on Rails 4.0.0 and Ruby 2.0.0. The following design patterns and libraries were used:
 
-* System dependencies
+* Database Migrations: Initialized the schema for users, hotels, and bookings.
 
-* Configuration
+* Seeding Data: Data was populated for users, hotels, and bookings.
 
-* Database creation
+* Routes: RESTful URLs for the resources. Root URL setup.
 
-* Database initialization
+* Assets Pipeline: CSS and JavaScript are concatenated, compressed, and fingerprinted.
 
-* How to run the test suite
+* thin GEM: Web server used to run the application.
 
-* Services (job queues, cache servers, search engines, etc.)
+* pg GEM: Provides PostgreSQL database connection.
 
-* Deployment instructions
+* devise GEM: Provides database authentication via email and password.
 
-* ...
+* jquery-rails GEM: Adds jQuery to the application.
 
+* Google Maps: Use the V3 API from Google Maps to geocode hotel address and display on map.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Heroku: Cloud hosting for Rails application. Provides PostgreSQL database. Deployments via GIT.
