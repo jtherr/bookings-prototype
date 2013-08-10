@@ -1,0 +1,15 @@
+<h2><%= current_user.email %>'s Bookings</h2>
+
+<% if @bookings.size == 0 %>
+	<p>You have not booked any hotel reservations.</p>
+<% else %>
+	<div class="bookings">
+		<% @bookings.each_with_index do |booking, i| %>		
+			<div class="booking <%= i == 0 ? 'first' : '' %>">
+				<div class="hotel"><%= link_to booking.hotel.name, hotel_path(booking.hotel) %></div>
+				<div class="travel_dates"><%= booking.travel_from_date.strftime("%m/%d/%Y") %> - <%= booking.travel_to_date.strftime("%m/%d/%Y") %></div>
+				<div class="confirmation_number">Confirmation #: <%= booking.confirmation_number %></div>
+			</div>
+		<% end %>
+	</div>
+<% end %>
