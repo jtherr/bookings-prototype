@@ -26,6 +26,8 @@ This prototype is built using Ruby on Rails 4.0.0 and Ruby 2.0.0. The following 
 
 * devise GEM: Provides database authentication via email and password.
 
+* haml GEM: Simplifies HTML using HAML syntax
+
 * jquery-rails GEM: Adds jQuery to the application.
 
 * Google Maps: Use the V3 API from Google Maps to geocode hotel address and display on map.

@@ -1,0 +1,37 @@
+= link_to 'Return to bookings', bookings_path()
+
+%h2= @hotel.name
+
+:javascript
+	var map;
+	var geocoder;
+	
+	function initMap() {
+		geocoder = new google.maps.Geocoder();
+	
+		geocoder.geocode( { 'address': '#{@hotel.address}'}, function(results, status) {
+		    if (status == google.maps.GeocoderStatus.OK) {
+				var mapOptions = {		  	
+					zoom: 15,
+					center: results[0].geometry.location,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+		
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		    			      	
+		      	var marker = new google.maps.Marker({
+		        	map: map,
+		        	position: results[0].geometry.location,
+		          	title: '#{@hotel.name}'
+		      	});
+		    } else {
+		      alert('Geocode was not successful for the following reason: ' + status);
+		    }
+		});
+	}
+	
+	$(function() {
+		initMap();
+	});
+
+#map-canvas

@@ -1,0 +1,11 @@
+%h2 #{current_user.email} Bookings
+
+- if @bookings.size == 0
+	%p You have not booked any hotel reservations.
+- else
+	.bookings
+		- @bookings.each_with_index do |booking, i|
+			.booking{:class => i == 0 ? 'first' : ''}
+				.hotel= link_to booking.hotel.name, hotel_path(booking.hotel)
+				.travel_dates #{booking.travel_from_date.strftime("%m/%d/%Y")} - #{booking.travel_to_date.strftime("%m/%d/%Y")}
+				.confirmation_number Confirmation #: #{booking.confirmation_number}
