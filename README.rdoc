@@ -16,6 +16,10 @@ This prototype is built using Ruby on Rails 4.0.0 and Ruby 2.0.0. The following 
 
 * Seeding Data: Data was populated for users, hotels, and bookings.
 
+* Default Scope: Used to set default order for booking queries.
+
+* Validation: Ensures model is meets various criteria before saving, such as presence and uniqueness.
+
 * Routes: RESTful URLs for the resources. Root URL setup.
 
 * Assets Pipeline: CSS and JavaScript are concatenated, compressed, and fingerprinted.
