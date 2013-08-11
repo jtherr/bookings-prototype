@@ -20,6 +20,8 @@ This prototype is built using Ruby on Rails 4.0.0 and Ruby 2.0.0. The following 
 
 * Assets Pipeline: CSS and JavaScript are concatenated, compressed, and fingerprinted.
 
+* Unit Tests: Unit test model validation.
+
 * thin GEM: Web server used to run the application.
 
 * pg GEM: Provides PostgreSQL database connection.

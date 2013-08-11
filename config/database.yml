@@ -17,6 +17,7 @@ test:
   pool: 5
   username: bookings
   password: Book1234
+  host: localhost
 
 production:  
   adapter: postgresql
